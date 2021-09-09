@@ -1,0 +1,16 @@
+image: "joyzoursky/python-chromedriver"
+
+before_script:
+  - python --version
+  - pip install selenium
+  - pip install webdriver_manager
+  - pip install sib-api-v3-sdk
+  - pip install twilio
+
+stages:
+  - Run-script
+
+Run-script-job:
+  stage: Run-script
+  script:
+  - python migri-queue-twilio.py
